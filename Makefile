@@ -8,7 +8,7 @@ down:
 		docker-compose down
 
 test:
-		docker exec airflow pytest -v -W ignore test_dataset.py >> results_test_$(date +"%Y%m%d_%H%M%S").txt
+		docker exec airflow pytest -v -W ignore test_dataset.py
 
 test_cov:
 		docker exec airflow pytest --cov -v -W ignore
