@@ -1,8 +1,8 @@
 name: airflow_ci
 
-on:
-  push:
-    branches: [ master ]
+on: [push]
+#  push:
+#    branches: [ master ]
 #  pull_request:
 #    branches: [ master ]
 
