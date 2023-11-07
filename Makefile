@@ -2,13 +2,13 @@ include .env
 
 setup:
 		docker-compose up -d --force-recreate --remove-orphans
-		sleep 60
+		sleep 120
 
 down:
 		docker-compose down
 
 test:
-		docker exec airflow pytest -v -W ignore test_dataset.py 
+		docker exec airflow pytest -v -W ignore
 
 test_cov:
 		docker exec airflow pytest --cov -v -W ignore
