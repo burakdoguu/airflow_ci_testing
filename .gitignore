@@ -1,0 +1,7 @@
+.pytest_cache/
+.cache
+*.log
+__pypackages__/
+.pytest_cache/
+logs/
+__pycache__/
