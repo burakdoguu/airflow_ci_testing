@@ -17,8 +17,6 @@ services:
         - AIRFLOW__CORE__LOAD_EXAMPLES=false
         - AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS=false
         - AIRFLOW__API__AUTH_BACKENDS=${AIRFLOW_API_BACKENDS}
-        - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
-        - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN= postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
       ports:
         - 8080:8080
       command: 'bash -c "pip3 install -r requirements.txt && airflow db init && airflow webserver -D && airflow scheduler -D"'
