@@ -11,6 +11,7 @@ jobs:
   airflow_ci:
     runs-on: ubuntu-latest
     steps:
+    
       - uses: actions/checkout@v2
       - name: Create airflow env
         run: make setup
