@@ -14,17 +14,12 @@ jobs:
     
       - uses: actions/checkout@v4
       - name: Create airflow env
-        run: make docker-up
-      - name: Permissions
-        run: make perms
-      - name: Run dag test
-        run: make dag_test
-#      - name: Run tests
-#        run: make test
-#      - name: Run test cov
-#        run: make test_cov
+      - name: Run tests
+        run: make test
+      - name: Run test cov
+        run: make test_cov
 ##      - name: Run dag test
 ##        run: make dag_test
-#      - name: Down airflow env
-#        run: down
+      - name: Down airflow env
+        run: down
   
