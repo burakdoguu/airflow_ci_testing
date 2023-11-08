@@ -17,8 +17,8 @@ jobs:
         run: make docker-up
       - name: Permissions
         run: make perms
-      - name: sh
-        run: make sh
+      - name: Run dag test
+        run: make dag_test
 #      - name: Run tests
 #        run: make test
 #      - name: Run test cov
