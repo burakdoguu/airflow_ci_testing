@@ -22,5 +22,5 @@ jobs:
 ##      - name: Run dag test
 ##        run: make dag_test
       - name: Down airflow env
-        run: down
+        run: make down
   

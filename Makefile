@@ -5,7 +5,7 @@ setup:
 		docker ps
 
 down:
-		docker-compose down
+		docker compose down
 
 test:
 		docker exec airflow pytest -v -W ignore
