@@ -5,10 +5,8 @@ docker-up:
 		docker compose up -d 
 
 perms:
-		sudo chmod -R u=rwx,g=rwx,o=rwx dags tests 
+		sudo chmod u=rwx,g=rwx,o=rwx dags tests 
 
-up: 
-		perms docker-up 
 
 sh:
 		docker exec -ti airflow /bin/bash 
