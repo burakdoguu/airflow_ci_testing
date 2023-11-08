@@ -2,13 +2,13 @@
 
 
 docker-up:
-		docker compose --env-file .env up -d 
+		docker compose up -d 
 
 perms:
 		sudo chmod -R u=rwx,g=rwx,o=rwx dags tests 
 
 up: 
-		docker-up perms
+		perms docker-up 
 
 sh:
 		docker exec -ti airflow /bin/bash 
