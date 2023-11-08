@@ -8,13 +8,8 @@ perms:
 		sudo chmod u=rwx,g=rwx,o=rwx dags tests 
 
 
-sh:
-		docker exec -ti airflow /bin/bash 
-
-
-
-down:
-		docker compose down
+dag_test:
+		docker exec airflow airflow tasks test data_aware_consumer read_dataset 2023-01-01
 
 
 
