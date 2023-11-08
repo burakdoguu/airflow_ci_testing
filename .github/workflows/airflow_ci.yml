@@ -17,12 +17,14 @@ jobs:
         run: make docker-up
       - name: Permissions
         run: make perms
+      - name: sh
+        run: make sh
 #      - name: Run tests
 #        run: make test
 #      - name: Run test cov
 #        run: make test_cov
 ##      - name: Run dag test
 ##        run: make dag_test
-      - name: Down airflow env
-        run: down
+#      - name: Down airflow env
+#        run: down
   
