@@ -10,7 +10,8 @@ setup:
 
 
 check_permissions:
-		docker exec airflow ls -l $(FILE_PATH_HOME)
+		docker exec airflow ls -l
+#		docker exec airflow ls -l $(FILE_PATH_HOME)
 
 update_permissions:
 		docker exec airflow chmod +rw $(FILE_PATH_HOME)
