@@ -10,7 +10,8 @@ setup:
 
 
 check_permissions:
-		docker exec airflow chmod 777 /dataset_start /dataset_final 
+		docker exec airflow pwd
+#		docker exec airflow chmod 777 /dataset_start /dataset_final 
 
 #update_permissions:
 #		docker exec airflow chmod +rw $(FILE_PATH_HOME)
