@@ -9,10 +9,8 @@ setup:
 		docker ps
 
 
-#check_permissions:
-#		docker exec airflow cd /dataset_final ls -l
-#		docker exec airflow /bin/bash $(FILE_PATH_HOME) ls -l
-#		./script.sh
+check_permissions:
+		docker exec airflow chmod 777 /dataset_start /dataset_final 
 
 #update_permissions:
 #		docker exec airflow chmod +rw $(FILE_PATH_HOME)
