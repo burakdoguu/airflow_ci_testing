@@ -1,10 +1,5 @@
 #!/bin/bash
 
-cd "$(dirname "$0")"  
+docker exec -it airflow /bin/bash
 
-if [ -f "dataset_final" ]; then  
-    cd dataset_final  
-    ls -l  
-else
-    echo "Error: dataset_final not found."  
-fi
+docker exec airflow airflow tasks test data_aware_producer count_products_df 2023-01-01
