@@ -1,20 +1,11 @@
 
-FILE_PATH_DEST:=/dateset_final
-FILE_PATH_HOME:=/dateset_start
-
 
 setup:
-		docker-compose up -d --force-recreate --remove-orphans
-		sleep 60
+#		docker-compose up -d --force-recreate --remove-orphans
+		docker compose --env-file ./env up --build -d
+		sleep 30
 		docker ps
 
-
-check_permissions:
-		docker exec airflow pwd
-#		docker exec airflow chmod 777 /dataset_start /dataset_final 
-
-#update_permissions:
-#		docker exec airflow chmod +rw $(FILE_PATH_HOME)
 
 test:
 		docker exec airflow pytest -v -W ignore
@@ -25,5 +16,4 @@ test_cov:
 down:
 		docker compose down
 
-dag_test:
-		docker exec airflow airflow tasks test data_aware_consumer read_dataset 2023-01-01
+

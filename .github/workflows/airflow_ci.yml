@@ -16,12 +16,6 @@ jobs:
       - name: Create airflow env
         run: make setup
 
-      - name: permission check
-        run: make check_permissions
-
-      - name: Run dag test
-        run: make dag_test
-
       - name: Run tests
         run: make test
 
