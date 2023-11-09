@@ -10,11 +10,11 @@ setup:
 
 
 check_permissions:
-		ls -l $(FILE_PATH_HOME)
+		docker exec airflow ls -l $(FILE_PATH_HOME)
 
 update_permissions:
-		chmod +rw $(FILE_PATH_HOME)
-		
+		docker exec airflow chmod +rw $(FILE_PATH_HOME)
+
 test:
 		docker exec airflow pytest -v -W ignore
 
