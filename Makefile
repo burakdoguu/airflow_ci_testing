@@ -1,6 +1,6 @@
 
-FILE_PATH_DEST:=/opt/airflow/dateset_final/count_product.csv
-FILE_PATH_HOME:=/opt/airflow/dateset_start/product-category-map.csv
+FILE_PATH_DEST:=/dateset_final
+FILE_PATH_HOME:=/dateset_start
 
 
 setup:
@@ -10,8 +10,8 @@ setup:
 
 
 check_permissions:
-		docker exec airflow cd /dataset_final ls -l
-#		docker exec airflow ls -l $(FILE_PATH_HOME)
+#		docker exec airflow cd /dataset_final ls -l
+		docker exec airflow ls -l $(FILE_PATH_HOME)
 
 update_permissions:
 		docker exec airflow chmod +rw $(FILE_PATH_HOME)
