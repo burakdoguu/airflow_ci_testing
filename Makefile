@@ -1,17 +1,28 @@
 
+FILE_PATH_DEST:=/opt/airflow/dateset_final/count_product.csv
+FILE_PATH_HOME:=/opt/airflow/dateset_start/product-category-map.csv
+
+
 setup:
 		docker-compose up -d --force-recreate --remove-orphans
-		sleep 120
+		sleep 60
 		docker ps
 
-down:
-		docker compose down
 
+check_permissions:
+		ls -l $(FILE_PATH_HOME)
+
+update_permissions:
+		chmod +rw $(FILE_PATH_HOME)
+		
 test:
 		docker exec airflow pytest -v -W ignore
 
 test_cov:
-		docker exec airflow pytest --cov -v -W ignore
+		docker exec airflow pytest --cov -v -W 
+
+down:
+		docker compose down
 
 #dag_test:
 #		docker exec airflow airflow tasks test data_aware_consumer read_dataset 2023-01-01
