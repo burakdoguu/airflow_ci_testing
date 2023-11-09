@@ -13,6 +13,10 @@ RUN export JAVA_HOME
 
 USER airflow
 
-COPY ./requirements.txt /
+#COPY ./requirements.txt /
 
-RUN pip install -r /requirements.txt
+ADD ./requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
