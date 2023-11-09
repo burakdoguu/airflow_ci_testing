@@ -17,7 +17,6 @@ COPY ./requirements.txt /
 
 #ADD ./requirements.txt requirements.txt
 
-ADD ./script.sh script.sh
 
 RUN pip install -r requirements.txt
 
