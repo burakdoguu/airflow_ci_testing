@@ -9,13 +9,13 @@ setup:
 		docker ps
 
 
-check_permissions:
+#check_permissions:
 #		docker exec airflow cd /dataset_final ls -l
 #		docker exec airflow /bin/bash $(FILE_PATH_HOME) ls -l
-		./script.sh
+#		./script.sh
 
-update_permissions:
-		docker exec airflow chmod +rw $(FILE_PATH_HOME)
+#update_permissions:
+#		docker exec airflow chmod +rw $(FILE_PATH_HOME)
 
 test:
 		docker exec airflow pytest -v -W ignore
@@ -26,5 +26,5 @@ test_cov:
 down:
 		docker compose down
 
-#dag_test:
-#		docker exec airflow airflow tasks test data_aware_consumer read_dataset 2023-01-01
+dag_test:
+		docker exec airflow airflow tasks test data_aware_consumer read_dataset 2023-01-01

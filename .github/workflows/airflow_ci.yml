@@ -17,18 +17,18 @@ jobs:
         run: make setup
 
       - name: permission check
-        run: make check_permissions
-      
-      - name: permission update
-        run: make update_permissions
+        run: |
+        docker exec airflow chmod 777 /dataset_start /dataset_final 
 
+      - name: Run dag test
+        run: make dag_test
+        
       - name: Run tests
         run: make test
 
       - name: Run test cov
         run: make test_cov
-##      - name: Run dag test
-##        run: make dag_test
+
       - name: Down airflow env
         run: make down
   
