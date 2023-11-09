@@ -10,7 +10,7 @@ setup:
 
 
 check_permissions:
-		docker exec airflow ls -l
+		docker exec airflow /dataset_final ls -l
 #		docker exec airflow ls -l $(FILE_PATH_HOME)
 
 update_permissions:
