@@ -11,7 +11,8 @@ setup:
 
 check_permissions:
 #		docker exec airflow cd /dataset_final ls -l
-		docker exec airflow /bin/bash $(FILE_PATH_HOME) ls -l
+#		docker exec airflow /bin/bash $(FILE_PATH_HOME) ls -l
+		sh script.sh
 
 update_permissions:
 		docker exec airflow chmod +rw $(FILE_PATH_HOME)
