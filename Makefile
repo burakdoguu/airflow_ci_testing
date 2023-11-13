@@ -6,10 +6,10 @@ setup:
 
 
 test:
-		docker exec airflow pytest -v -W ignore
+		docker exec airflow-scheduler pytest -v -W ignore
 
 test_cov:
-		docker exec airflow pytest --cov -v -W 
+		docker exec airflow-scheduler pytest --cov -v -W 
 
 down:
 		docker compose down
