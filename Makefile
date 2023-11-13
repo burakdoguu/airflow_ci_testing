@@ -8,7 +8,7 @@ test:
 		docker exec airflow pytest -v -W ignore
 
 test_cov:
-		docker exec airflow pytest --cov -v -W 
+		docker exec airflow pytest --cov -v -W ignore
 
 down:
 		docker compose down
