@@ -1,6 +1,6 @@
 setup:
 #		docker-compose up -d --force-recreate --remove-orphans
-		docker compose -f docker-compose-new.yml
+		docker compose -f docker-compose-new.yml up -d
 		sleep 30
 		docker ps
 
