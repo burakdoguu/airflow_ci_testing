@@ -1,9 +1,8 @@
 setup:
-#		docker-compose up -d --force-recreate --remove-orphans
-		docker compose -f docker-compose-new.yml up -d
+		docker-compose up -d --force-recreate --remove-orphans
+#		docker compose -f docker-compose-new.yml up -d
 		sleep 30
 		docker ps
-	
 
 test:
 		docker exec airflow-scheduler pytest -v -W ignore
