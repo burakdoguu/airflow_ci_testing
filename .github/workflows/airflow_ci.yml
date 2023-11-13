@@ -18,7 +18,7 @@ jobs:
 
       - name: testing container
         run: |
-          docker exec -it airflow-scheduler /bin/bash
+          sudo docker exec -it airflow-scheduler /bin/bash
           ls -la
 #      - name: Run tests
 #        run: make test
