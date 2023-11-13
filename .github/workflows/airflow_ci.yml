@@ -16,16 +16,12 @@ jobs:
       - name: Create airflow env
         run: make setup
 
-      - name: testing container
-        run: |
-          docker-compose exec -T airflow-scheduler /bin/bash
-          ls -la
-#      - name: Run tests
-#        run: make test
-#
-#      - name: Run test cov
-#        run: make test_cov
-#
-#      - name: Down airflow env
-#        run: make down
+      - name: Run tests
+        run: make test
+
+      - name: Run test cov
+        run: make test_cov
+
+      - name: Down airflow env
+        run: make down
   

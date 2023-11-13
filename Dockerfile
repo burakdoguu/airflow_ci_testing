@@ -1,6 +1,6 @@
 FROM apache/airflow:2.7.2-python3.10
 
-USER root
+#USER root
 
 ## Install OpenJDK-11
 
@@ -12,11 +12,11 @@ USER root
 #ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 #RUN export JAVA_HOME
 #
-USER airflow
+#USER airflow
 
-COPY ./requirements.txt .
+#COPY ./requirements.txt .
 
-#ADD ./requirements.txt requirements.txt
+COPY requirements.txt requirements.txt
 
 
 RUN pip install -r requirements.txt
